@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.imageGenerator {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    background: url(assets/aibg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.imageGenerator::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: #121212;
+}
+
+.imageGenerator .content {
+    padding: 0 15px;
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+}
+
+.imageGenerator h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.imageGenerator p {
+    font-size: 1.35rem;
+    margin-top: 10px;
+}
+
+.imageGenerator .generateForm {
+    height: 56px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px;
+    margin: 45px 0px 15px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.generateForm .promptInput {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 17px;
+}
+
+.generateForm .controls {
+    display: flex;
+    height: 100%;
+    gap: 15px;
+}
+
+.generateForm .imageQuantity {
+    outline: none;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.generateForm .generateBtn {
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 25px;
+    cursor: pointer;
+    background: #4949E7;
+}
+
+.imageGallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    max-width: 1250px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.imageGallery .imgCard {
+    width: 285px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+
+}
+
+.imageGallery .imgCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageGallery .imgCard.loading img {
+
+    width: 80px;
+    height: 80px;
+}
+
+.imageGallery .imgCard .downloadBtn img {
+    width: 14px;
+    height: 14px;
+}
+
+.imageGallery .imgCard .downloadBtn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageGallery .imgCard:not(.loading):hover .downloadBtn {
+    display: flex;
+}
+
+@media screen and (max-width:760px) {
+    .imageGenerator h1 {
+        font-size: 1.8rem;
+    }
+
+    .imageGenerator p {
+        font-size: 1rem;
+    }
+
+    .imageGenerator .generateForm {
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+    }
+
+    .generateForm .controls {
+        height: 40px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .generateForm .imageQuantity {
+        color: #fff;
+    }
+
+    .generateForm .imageQuantity option {
+        color: #000;
+    }
+
+    .generateForm .generateBtn {
+        height: 100%;
+    }
+
+    .imageGallery {
+        margin-top: 20px;
+    }
+
+    .imageGallery .imgCard:not(.loading) .downloadBtn {
+        display: flex;
+
+    }
+}
+
+@media screen and (max-width:550px) {
+    .imageGallery .imgCard {
+        width: 100%;
+    }
+}
